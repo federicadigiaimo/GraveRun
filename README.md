@@ -1,7 +1,7 @@
 # GraveRun! - 2D Animation & Gameplay Demo
 
 <p align="center">
-  <video src="img/gameplay.mp4" width="600" autoplay loop muted playsinline>
+  <video src="[img/gameplay.mp4](https://github.com/federicadigiaimo/GraveRun/blob/main/img/gameplay.mp4)" width="600" autoplay loop muted playsinline>
   </video>
 </p>
 
