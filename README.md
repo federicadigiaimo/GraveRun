@@ -2,7 +2,6 @@
 
 <p align="center">
   <video src="img/gameplay.mp4" width="600" autoplay loop muted playsinline>
-    Il tuo browser non supporta il tag video.
   </video>
 </p>
 
