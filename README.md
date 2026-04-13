@@ -15,3 +15,35 @@ The project was designed to meet and exceed the following technical criteria:
 
 While code organization was flexible for the assignment, this repository follows a **modular structure** to demonstrate industry-standard practices in game engine architecture.
 *Developed as part of the Fundamentals of Computer Graphics course in Computer Engineering in Alma Mater Studiorum, Bologna, Italy.*
+
+## Gameplay Mechanics
+
+The game features a side-scrolling environment where the objective is to survive as long as possible. Players earn points by covering distance and collecting **glitter items** scattered throughout the path.
+
+### Obstacles
+To survive, the player must react to two distinct types of hazards:
+* **The Headstone**: A static obstacle that requires a timed jump to clear.
+* **The Zombie Hand**: An emerging hazard that sprouts from the ground; the player must navigate around or over it without making contact.
+
+### Difficulty Scaling
+To ensure a challenging experience, the game implements a **dynamic difficulty system**. The run is divided into **50-meter milestones**. Every time a milestone is reached, the side-scrolling speed increases, demanding faster reflexes for both obstacle avoidance and item collection.
+
+### Real-Time Statistics
+Player performance is tracked in real-time. Metrics such as meters traveled and items collected are updated and displayed via the **Command-Line Interface (CLI)** for immediate feedback.
+
+<p align="center">
+  <img src="img/cmd_stats.png" width="450" alt="Game Statistics CLI">
+  <br><i>Fig. 2 - Real-time statistics tracking distance, collection, and speed updates.</i>
+</p>
+
+## Controls
+
+The movement system allows for precise control over the character's position and speed:
+
+| Key | Action |
+| :--- | :--- |
+| **W** | Jump (Parabolic trajectory) |
+| **A** | Step Backward |
+| **D** | Step Forward |
+| **Shift** | Sprint |
+| **R** | Restart Game |
