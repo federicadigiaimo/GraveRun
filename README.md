@@ -106,3 +106,23 @@ The visual style focuses on a stylized, block-based aesthetic, utilizing transpa
     </td>
   </tr>
 </table>
+
+## Technical Implementation: Physics & Mechanics
+
+The game's movement system is built upon a custom physics engine that manages real-time kinematics, gravity simulations, and viewport constraints.
+
+### 1. Kinematics & Side-Scrolling Movement
+To create the illusion of a continuous world, all objects in the scene—including the player—are subject to a constant leftward translation. However, the protagonist retains independent horizontal control, allowing for free movement along the X-axis to dodge obstacles or increase the distance from the chasing zombie.
+
+### 2. Parabolic Jump Model
+The jumping mechanic is handled through a discrete physical simulation of a parabolic trajectory:
+
+* **Initial Impulse**: When the jump key ('W') is pressed while the character is grounded, a high positive value is assigned to the `verticalSpeed` variable, representing the initial upward thrust.
+* **Gravity Simulation**: During the flight phase, a fixed gravitational constant is subtracted from `verticalSpeed` in every frame.
+* **Zenith & Descent**: The character reaches the peak of the arc when `verticalSpeed` hits zero for a single frame. Subsequently, the velocity becomes increasingly negative, simulating a realistic accelerated descent until ground contact is re-established.
+
+### 3. Viewport Constraints (Invisible Walls)
+To maintain gameplay integrity, the character's coordinates are strictly clamped within the window boundaries:
+* **Vertical Bound**: The jump height is mathematically capped to ensure the player remains within the visible viewport.
+* **Horizontal Clamping**: A boundary check is performed on the X-axis. If the character's position exceeds the window limits, it is locked using the following logic: 
+  `posxCharacter = width - CHARACTER_WIDTH`.
