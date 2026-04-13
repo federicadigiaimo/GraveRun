@@ -24,7 +24,7 @@ While code organization was flexible for the assignment, this repository follows
 
 ## Gameplay Mechanics
 
-The game features a side-scrolling environment where the objective is to survive as long as possible. Players earn points by covering distance and collecting **glitter items** scattered throughout the path.
+The game features a side-scrolling environment where the objective is to survive as long as possible. Players earn points by covering distance and collecting **gems items** scattered throughout the path.
 
 ### Obstacles
 To survive, the player must react to two distinct types of hazards:
@@ -73,7 +73,7 @@ The visual style focuses on a stylized, block-based aesthetic, utilizing transpa
 * **Interactive & Gameplay Elements**:
     * **Headstones**: Composed of a rectangular base and a semi-circular top, featuring a cross-shaped detail.
     * **Zombie Hands**: Detailed assemblies of multiple rectangles representing the palm, fingers, and nails, emerging from a circular "hole" primitive.
-    * **Collectibles (Glitter)**: Diamond-shaped items created by joining two triangles.
+    * **Collectibles (Gem)**: Diamond-shaped items created by joining two triangles.
     * **Particles**: Individual white square primitives used for real-time visual effects.
  
 <table align="center">
@@ -184,7 +184,7 @@ The core logic resides within the `update()` function, which continuously monito
 
 ### 2. Entity-Specific Interactions
 Collisions are interpreted differently depending on the object type:
-* **Collectibles (Glitter)**: Positive interaction. The item is deactivated (`isActive = false`), the score increments, and a particle effect is triggered for visual feedback.
+* **Collectibles (Gem)**: Positive interaction. The item is deactivated (`isActive = false`), the score increments, and a particle effect is triggered for visual feedback.
 * **Lethal Hazards (Zombie & Hands)**: Negative interaction. The system sets a global `hit` flag to `true`, effectively triggering the Game Over state.
 * **Environment (Headstones)**: Context-aware interaction. The result depends on the point of impact:
     * **Top Impact**: Allows the player to land and walk on top of the headstone, treating it as a platform.
