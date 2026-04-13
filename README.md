@@ -220,3 +220,21 @@ else if (!goingUp) {
     }
 }
 ```
+### 4. Enemy-Environment Interaction
+To emphasize the zombie's unstoppable nature, a specific collision logic is applied to the enemy NPC. When the zombie collides with any environmental obstacle (such as headstones), the object is immediately deactivated (`isActive = false`). This creates the visual impression of the creature destroying everything in its path, adding to the game's atmosphere and threat level.
+
+## VFX: Real-Time Particle System
+
+To provide satisfying visual feedback during gameplay, specifically for item collection, I implemented a custom **Particle System**. This system simulates a small "magical" explosion whenever the player collects a glitter item.
+
+<p align="center">
+  <img src="img/particlesystem.gif" width="250" alt="Particle effect on collection"/>
+  <br><i>Fig. 3 - Particle explosion triggered upon item collection.</i>
+</p>
+
+### Technical Implementation: Object Pooling
+Following industry best practices for memory management and performance, the system utilizes **Object Pooling**:
+* **Pre-allocation**: A fixed-size array of particles is allocated at startup, with all entities initially set to an inactive state.
+* **Emission**: When an item is collected, the `emit_particles()` function is triggered. It resets and activates a group of particles, positioning them at the center of the collected item.
+* **Dynamics & Lifespan**: The `update_particles()` function manages the real-time behavior of each active particle. It calculates their outward dispersion using velocity vectors and monitors their **TTL (Time To Live)**. Once a particle's short lifespan expires, it is automatically deactivated and returned to the pool for future use.
+
