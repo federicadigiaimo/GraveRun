@@ -235,20 +235,20 @@ Following industry best practices for memory management and performance, the sys
 * **Dynamics & Lifespan**: The `update_particles()` function manages the real-time behavior of each active particle. It calculates their outward dispersion using velocity vectors and monitors their **TTL (Time To Live)**. Once a particle's short lifespan expires, it is automatically deactivated and returned to the pool for future use.
 ```text
 .
-├── img/                # Visual documentation (screenshots and demos)
+├── img/                          # Visual documentation (screenshots and demos)
 ├── assets/
-│   └── shaders/        # OpenGL Shading Language (GLSL) source files
+│   └── shaders/                  # OpenGL Shading Language (GLSL) source files
 ├── include/
-│   ├── gestione_callback.h  # Callback definitions
-│   ├── lib.h          # General headers and dependencies
-│   └── ShaderMaker.h   # Shader utility header
+│   ├── gestione_callback.h       # Callback definitions
+│   ├── lib.h                     # General headers and dependencies
+│   └── ShaderMaker.h             # Shader utility header
 ├── src/
-│   ├── glad.c          # OpenGL loader library
-│   ├── gestione_callback.cpp # Input handling (mouse/keyboard)
-│   ├── init_geometrie.cpp # 2D geometry drawing
-│   ├── ShaderMaker.cpp # Shader utility implementation
-│   └── LAB_2_2D_ZOMBIE.cpp # Main application logic
-├── .gitattributes      # Git configuration for path attributes
-├── LICENSE             # Project license terms
-└── README.md           # Project documentation and setup guide
+│   ├── glad.c                    # OpenGL loader library
+│   ├── gestione_callback.cpp     # Input handling (mouse/keyboard)
+│   ├── init_geometrie.cpp        # 2D geometry drawing
+│   ├── ShaderMaker.cpp           # Shader utility implementation
+│   └── LAB_2_2D_ZOMBIE.cpp       # Main application logic
+├── .gitattributes                # Git configuration for path attributes
+├── LICENSE                       # Project license terms
+└── README.md                     # Project documentation and setup guide
 ```
