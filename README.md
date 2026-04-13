@@ -73,29 +73,29 @@ The visual style focuses on a stylized, block-based aesthetic, utilizing transpa
 <table align="center">
   <tr>
     <td align="center">
-      <img src="img/personaggio.png" width="150px" alt="Protagonist"/><br />
+      <img src="img/personaggio.png" width="200px" alt="Protagonist"/><br />
       <sub><b>Main Protagonist</b></sub>
     </td>
     <td align="center">
-      <img src="img/zombie.png" width="150px" alt="Zombie"/><br />
+      <img src="img/zombie.png" width="200px" alt="Zombie"/><br />
       <sub><b>Chasing Zombie</b></sub>
     </td>
     <td align="center">
-      <img src="img/montagna.png" width="150px" alt="Mountain"/><br />
+      <img src="img/montagna.png" width="200px" alt="Mountain"/><br />
       <sub><b>Mountain</b></sub>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="img/mano_zombie.png" width="150px" alt="Zombie Hand"/><br />
+      <img src="img/mano_zombie.png" width="200px" alt="Zombie Hand"/><br />
       <sub><b>Zombie Hand</b></sub>
     </td>
     <td align="center">
-      <img src="img/lapide.png" width="150px" alt="Headstone"/><br />
+      <img src="img/lapide.png" width="200px" alt="Headstone"/><br />
       <sub><b>Headstone</b></sub>
     </td>
     <td align="center">
-      <img src="img/alberi.png" width="150px" alt="Trees"/><br />
+      <img src="img/alberi.png" width="200px" alt="Trees"/><br />
       <sub><b>Trees</b></sub>
     </td>
   </tr>
