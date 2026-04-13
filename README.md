@@ -1,7 +1,6 @@
 # GraveRun! - 2D Animation & Gameplay Demo
 ## Project Overview
 **GraveRun!** is an interactive 2D endless runner where the player must escape a chasing zombie while navigating a procedurally generated graveyard. The project focuses on real-time animation, physics-based movement, and dynamic gameplay systems using C++ and OpenGL.
-*Developed as part of the Fundamentals of Computer Graphics course in Computer Engineering in Alma Mater Studiorum, Bologna, Italy.*
 
 ## Project Objectives
 
@@ -15,3 +14,4 @@ The project was designed to meet and exceed the following technical criteria:
 * **Particle Systems**: Development of real-time particle effects to enhance the environmental feedback and visual polish.
 
 While code organization was flexible for the assignment, this repository follows a **modular structure** to demonstrate industry-standard practices in game engine architecture.
+*Developed as part of the Fundamentals of Computer Graphics course in Computer Engineering in Alma Mater Studiorum, Bologna, Italy.*
