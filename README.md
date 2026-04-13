@@ -235,21 +235,20 @@ Following industry best practices for memory management and performance, the sys
 * **Dynamics & Lifespan**: The `update_particles()` function manages the real-time behavior of each active particle. It calculates their outward dispersion using velocity vectors and monitors their **TTL (Time To Live)**. Once a particle's short lifespan expires, it is automatically deactivated and returned to the pool for future use.
 ```text
 .
-├── img/
-├── src/
-│   ├── fragmentShader_C_M.glsl
-│   ├── fragmentShader_Text.glsl
-│   ├── gestione_callback.cpp
+├── img/                # Visual documentation (screenshots and demos)
+├── assets/
+│   └── shaders/        # OpenGL Shading Language (GLSL) source files
+├── include/
 │   ├── gestione_callback.h
-│   ├── glad.c
-│   ├── init_geometrie.cpp
-│   ├── LAB_2_2D_ZOMBIE.cpp
 │   ├── lib.h
+│   └── ShaderMaker.h   # Header files for declarations and interfaces
+├── src/
+│   ├── glad.c          # OpenGL loader library
+│   ├── gestione_callback.cpp
+│   ├── init_geometrie.cpp
 │   ├── ShaderMaker.cpp
-│   ├── ShaderMaker.h
-│   ├── vertexShader_C_M.glsl
-│   └── vertexShader_Text.glsl
-├── .gitattributes
-├── LICENSE
-└── README.md
+│   └── LAB_2_2D_ZOMBIE.cpp # Main application logic
+├── .gitattributes      # Git configuration for path attributes
+├── LICENSE             # Project license terms
+└── README.md           # Project documentation and setup guide
 ```
