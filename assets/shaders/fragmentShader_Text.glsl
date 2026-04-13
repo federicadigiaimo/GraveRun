@@ -7,9 +7,9 @@ uniform vec3 textColor;
 
 void main()
 {
-    // Prendiamo il valore di "luminosit‡" del carattere dalla texture
+    // Prendiamo il valore di "luminosit√†" del carattere dalla texture
     float alpha = texture(text_texture, TexCoords).r;
 
-    // Disegniamo il pixel solo se non Ë completamente trasparente
+    // Disegniamo il pixel solo se non √® completamente trasparente
     color = vec4(textColor, alpha);
 }
