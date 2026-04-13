@@ -226,7 +226,6 @@ To provide satisfying visual feedback during gameplay, specifically for item col
 
 <p align="center">
   <img src="img/particlesystem.gif" width="350" alt="Particle effect on collection"/>
-  <br><i>Fig. 3 - Particle explosion triggered upon item collection.</i>
 </p>
 
 ### Technical Implementation: Object Pooling
