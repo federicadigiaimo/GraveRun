@@ -126,3 +126,97 @@ To maintain gameplay integrity, the character's coordinates are strictly clamped
 * **Vertical Bound**: The jump height is mathematically capped to ensure the player remains within the visible viewport.
 * **Horizontal Clamping**: A boundary check is performed on the X-axis. If the character's position exceeds the window limits, it is locked using the following logic: 
   `posxCharacter = width - CHARACTER_WIDTH`.
+
+## Endless World & Procedural Generation
+
+To achieve the "endless runner" experience and provide the illusion of an infinite environment, the game implements a continuous update loop for background and foreground elements. This system relies on a few key computer graphics techniques:
+
+### 1. Seamless Scrolling & Parallax Mechanics
+* **Coordinate Wrapping (Duplication)**: Background elements utilize two coordinate sets, `dx1` and `dx2`. While `dx1` starts at $x=0$, `dx2` is offset to $x=width$ (the window's width), effectively "stitching" the textures together.
+* **Frame-by-Frame Translation**: Both coordinate variables are decremented every frame based on the current game velocity.
+* **Automatic Reset**: As soon as a coordinate set completely exits the viewport, it is instantly teleported to the end of the active set, ensuring a flawless, infinite loop.
+* **Parallax Depth Simulation**: To enhance the sense of scale, distant scenery (like mountains) scrolls at a lower speed relative to the foreground, creating a realistic sense of depth.
+
+### 2. Procedural Spawning Logic
+Unlike static background elements, mountains and obstacles appear at randomized intervals. This is managed through an **Object Pooling** approach:
+* An array of objects is pre-allocated, each with an `isActive` flag.
+* A `mountain_timer` (or `obstacle_timer`) manages spawning; when it expires, the program searches for an inactive object and re-initializes it outside the right screen boundary with randomized dimensions.
+
+### 3. Dynamic Obstacle Spawner (C++)
+The obstacle logic is more complex as it manages different entity types—Headstones, Zombie Hands, and Gems—each with distinct randomized properties.
+
+```cpp
+if (obstacle_timer <= 0) {
+    for (int i = 0; i < MAX_OBSTACLES; i++) {
+        if (!obstacles[i].isActive) {
+            obstacles[i].isActive = true;
+
+            // Randomly select obstacle type
+            if (rand() % 3 == 0) {
+                obstacles[i].type = HAND;
+                obstacles[i].width = 50.0f;
+                obstacles[i].height = 75.0f;
+            }
+            else {
+                obstacles[i].type = HEADSTONE;
+                obstacles[i].width = 100 + rand() % 30;
+                obstacles[i].height = 120 + rand() % 70;
+            }
+
+            // Position the obstacle just outside the right viewport
+            obstacles[i].x = width + 100.0f;
+            obstacles[i].y = gameplayGroundLine;
+
+            // Reset spawn timer with a random variance
+            obstacle_timer = 1.2f + (rand() % 30) / 10.0f;
+            break;
+        }
+    }
+}
+```
+
+## Collision Detection & Resolution System
+
+The game implements a collision system based on **AABB (Axis-Aligned Bounding Boxes)** to manage interactions between the protagonist and various game entities.
+
+### 1. Collision Logic Overview
+The core logic resides within the `update()` function, which continuously monitors the spatial relationship between the player and active obstacles. For every active object, the system calculates its bounding box; if an overlap with the player's bounding box is detected, a collision event is triggered.
+
+### 2. Entity-Specific Interactions
+Collisions are interpreted differently depending on the object type:
+* **Collectibles (Glitter)**: Positive interaction. The item is deactivated (`isActive = false`), the score increments, and a particle effect is triggered for visual feedback.
+* **Lethal Hazards (Zombie & Hands)**: Negative interaction. The system sets a global `hit` flag to `true`, effectively triggering the Game Over state.
+* **Environment (Headstones)**: Context-aware interaction. The result depends on the point of impact:
+    * **Top Impact**: Allows the player to land and walk on top of the headstone, treating it as a platform.
+    * **Lateral Impact**: The headstone acts as a solid wall, blocking the player's horizontal progression.
+
+### 3. Headstone Collision Implementation (C++)
+The following snippet demonstrates the logic used to distinguish between "landing" on a headstone and "hitting" it from the side. This is achieved by checking the player's vertical velocity and previous frame position.
+
+```cpp
+float headstoneMargin = 15.0f;
+float headstoneLeft = obsLeft + headstoneMargin;
+float headstoneRight = obsRight - headstoneMargin;
+
+// Case 1: Character lands on top of the headstone
+if (verticalSpeed <= 0 && prevCharBottom >= obsTop 
+    && charRight > headstoneLeft && charLeft < headstoneRight) {
+
+    posyCharacter = obsTop;        // Snap to top surface
+    verticalSpeed = 0;             // Reset fall velocity
+    isGrounded = true;             // Enable jumping again
+    isStandingOnObstacle = true;
+}
+// Case 2: Lateral collision (Character hits the side)
+else if (!goingUp) {
+    float fromLeft = charRight - obsLeft;
+    float fromRight = obsRight - charLeft;
+
+    // Resolve overlap by pushing the character out of the obstacle
+    if (fromLeft < fromRight) {
+        posxCharacter -= fromLeft;
+    } else {
+        posxCharacter += fromRight;
+    }
+}
+```
