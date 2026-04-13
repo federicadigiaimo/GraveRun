@@ -239,14 +239,14 @@ Following industry best practices for memory management and performance, the sys
 ├── assets/
 │   └── shaders/        # OpenGL Shading Language (GLSL) source files
 ├── include/
-│   ├── gestione_callback.h
-│   ├── lib.h
-│   └── ShaderMaker.h   # Header files for declarations and interfaces
+│   ├── gestione_callback.h  # Callback definitions
+│   ├── lib.h          # General headers and dependencies
+│   └── ShaderMaker.h   # Shader utility header
 ├── src/
 │   ├── glad.c          # OpenGL loader library
-│   ├── gestione_callback.cpp
-│   ├── init_geometrie.cpp
-│   ├── ShaderMaker.cpp
+│   ├── gestione_callback.cpp # Input handling (mouse/keyboard)
+│   ├── init_geometrie.cpp # 2D geometry drawing
+│   ├── ShaderMaker.cpp # Shader utility implementation
 │   └── LAB_2_2D_ZOMBIE.cpp # Main application logic
 ├── .gitattributes      # Git configuration for path attributes
 ├── LICENSE             # Project license terms
