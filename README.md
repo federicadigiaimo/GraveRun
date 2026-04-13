@@ -1,9 +1,5 @@
 # GraveRun! - 2D Animation & Gameplay Demo
-<p align="center">
-  <video src="img/graverun.mp4" width="600" autoplay loop muted playsinline>
-    Il tuo browser non supporta il tag video.
-  </video>
-</p>
+https://github.com/user-attachments/assets/d76eb1a9-1c7f-435f-8527-a08b5c5b088a
 
 ## Project Overview
 **GraveRun!** is an interactive 2D endless runner where the player must escape a chasing zombie while navigating a procedurally generated graveyard. The project focuses on real-time animation, physics-based movement, and dynamic gameplay systems using C++ and OpenGL.
