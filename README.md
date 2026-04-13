@@ -228,7 +228,7 @@ To emphasize the zombie's unstoppable nature, a specific collision logic is appl
 To provide satisfying visual feedback during gameplay, specifically for item collection, I implemented a custom **Particle System**. This system simulates a small "magical" explosion whenever the player collects a glitter item.
 
 <p align="center">
-  <img src="img/particlesystem.gif" width="250" alt="Particle effect on collection"/>
+  <img src="img/particlesystem.gif" width="350" alt="Particle effect on collection"/>
   <br><i>Fig. 3 - Particle explosion triggered upon item collection.</i>
 </p>
 
