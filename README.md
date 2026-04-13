@@ -47,3 +47,56 @@ The movement system allows for precise control over the character's position and
 | **D** | Step Forward |
 | **Shift** | Sprint |
 | **R** | Restart Game |
+
+## Graphical Implementation & Asset Creation
+
+All game elements and complex geometries in **GraveRun!** were procedurally generated from simple geometric primitives. The project utilizes helper functions such as `draw_plan()` and `draw_triangle()` (defined in `init_geometrie.cpp`). I extended the provided codebase with custom helpers, including `draw_circle()` and `draw_quad()`, to support more diverse and detailed shapes.
+
+### Asset & Scenery Breakdown
+
+The visual style focuses on a stylized, block-based aesthetic, utilizing transparency and gradients to add depth:
+
+* **Dynamic Sky**: Instead of a flat color, the sky features a vertical gradient achieved through color interpolation between deep red and dark purple.
+* **Character Design**:
+    * **Protagonist**: A stylized female figure constructed from a series of assembled rectangles forming the head, torso, and limbs, with details like black hair and blue eyes.
+    * **The Zombie**: Built with a similar modular block structure but utilizing a desaturated palette (grays and sickly greens) to emphasize its undead nature.
+* **Environmental Assets**:
+    * **Trees**: Stylized bare structures composed of quadrilaterals forming the trunk and branches.
+    * **Mountains**: Polygonal shapes created by joining triangles to produce non-uniform slopes. Dual-tone coloring (base vs. peak) is used to enhance the sense of depth.
+    * **Clouds**: Formed by overlapping two circles, scaled along the Y-axis for a more organic look. An **alpha channel ($< 1$)** is used to provide realistic transparency.
+* **Interactive & Gameplay Elements**:
+    * **Headstones**: Composed of a rectangular base and a semi-circular top, featuring a cross-shaped detail.
+    * **Zombie Hands**: Detailed assemblies of multiple rectangles representing the palm, fingers, and nails, emerging from a circular "hole" primitive.
+    * **Collectibles (Glitter)**: Diamond-shaped items created by joining two triangles.
+    * **Particles**: Individual white square primitives used for real-time visual effects.
+ 
+<table align="center">
+  <tr>
+    <td align="center" width="33%">
+      <img src="img/personaggio.png" width="100%" alt="Protagonist"/><br />
+      <sub><b>Main Protagonist</b></sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="img/zombie.png" width="100%" alt="Zombie"/><br />
+      <sub><b>Chasing Zombie</b></sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="img/montagna.png" width="100%" alt="Mountain"/><br />
+      <sub><b>Background Mountain</b></sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="33%">
+      <img src="img/mano_zombie.png" width="100%" alt="Zombie Hand"/><br />
+      <sub><b>Emerging Zombie Hand</b></sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="img/lapide.png" width="100%" alt="Headstone"/><br />
+      <sub><b>Headstone Obstacle</b></sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="img/alberi.png" width="100%" alt="Trees"/><br />
+      <sub><b>Scenery Trees</b></sub>
+    </td>
+  </tr>
+</table>
