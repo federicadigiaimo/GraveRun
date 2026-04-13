@@ -233,6 +233,9 @@ Following industry best practices for memory management and performance, the sys
 * **Pre-allocation**: A fixed-size array of particles is allocated at startup, with all entities initially set to an inactive state.
 * **Emission**: When an item is collected, the `emit_particles()` function is triggered. It resets and activates a group of particles, positioning them at the center of the collected item.
 * **Dynamics & Lifespan**: The `update_particles()` function manages the real-time behavior of each active particle. It calculates their outward dispersion using velocity vectors and monitors their **TTL (Time To Live)**. Once a particle's short lifespan expires, it is automatically deactivated and returned to the pool for future use.
+
+## Repository Structure
+
 ```text
 .
 ├── img/                          # Visual documentation (screenshots and demos)
