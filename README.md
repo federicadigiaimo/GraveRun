@@ -36,7 +36,7 @@ Player performance is tracked in real-time. Metrics such as meters traveled and 
 
 <p align="center">
   <img src="img/cmd_stats.png" width="450" alt="Game Statistics CLI">
-  <br><i>Fig. 2 - Real-time statistics tracking distance, collection, and speed updates.</i>
+  <br><i>Real-time statistics tracking distance, collection, and speed updates.</i>
 </p>
 
 ## Controls
