@@ -70,7 +70,7 @@ The visual style focuses on a stylized, block-based aesthetic, utilizing transpa
     * **Collectibles (Glitter)**: Diamond-shaped items created by joining two triangles.
     * **Particles**: Individual white square primitives used for real-time visual effects.
  
-<table align="center" width="75%">
+<table align="center" width="60%">
   <tr>
     <td align="center" width="33%">
       <img src="img/personaggio.png" width="100%" alt="Protagonist"/><br />
