@@ -70,33 +70,33 @@ The visual style focuses on a stylized, block-based aesthetic, utilizing transpa
     * **Collectibles (Glitter)**: Diamond-shaped items created by joining two triangles.
     * **Particles**: Individual white square primitives used for real-time visual effects.
  
-<table align="center" width="60%">
+<table align="center">
   <tr>
-    <td align="center" width="33%">
-      <img src="img/personaggio.png" width="100%" alt="Protagonist"/><br />
+    <td align="center">
+      <img src="img/personaggio.png" width="150px" alt="Protagonist"/><br />
       <sub><b>Main Protagonist</b></sub>
     </td>
-    <td align="center" width="33%">
-      <img src="img/zombie.png" width="100%" alt="Zombie"/><br />
+    <td align="center">
+      <img src="img/zombie.png" width="150px" alt="Zombie"/><br />
       <sub><b>Chasing Zombie</b></sub>
     </td>
-    <td align="center" width="33%">
-      <img src="img/montagna.png" width="100%" alt="Mountain"/><br />
-      <sub><b>Background Mountain</b></sub>
+    <td align="center">
+      <img src="img/montagna.png" width="150px" alt="Mountain"/><br />
+      <sub><b>Mountain</b></sub>
     </td>
   </tr>
   <tr>
-    <td align="center" width="33%">
-      <img src="img/mano_zombie.png" width="100%" alt="Zombie Hand"/><br />
-      <sub><b>Emerging Zombie Hand</b></sub>
+    <td align="center">
+      <img src="img/mano_zombie.png" width="150px" alt="Zombie Hand"/><br />
+      <sub><b>Zombie Hand</b></sub>
     </td>
-    <td align="center" width="33%">
-      <img src="img/lapide.png" width="100%" alt="Headstone"/><br />
-      <sub><b>Headstone Obstacle</b></sub>
+    <td align="center">
+      <img src="img/lapide.png" width="150px" alt="Headstone"/><br />
+      <sub><b>Headstone</b></sub>
     </td>
-    <td align="center" width="33%">
-      <img src="img/alberi.png" width="100%" alt="Trees"/><br />
-      <sub><b>Scenery Trees</b></sub>
+    <td align="center">
+      <img src="img/alberi.png" width="150px" alt="Trees"/><br />
+      <sub><b>Trees</b></sub>
     </td>
   </tr>
 </table>
