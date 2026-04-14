@@ -1,4 +1,8 @@
 # GraveRun! - 2D Animation & Gameplay Demo
+![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=c%2B%2B&logoColor=white)
+![OpenGL](https://img.shields.io/badge/OpenGL-FFFFFF?style=flat-square&logo=opengl&logoColor=5586A4)
+![GLSL](https://img.shields.io/badge/GLSL-H6491D?style=flat-square&logo=opengl&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)
 
 <video src="https://github.com/user-attachments/assets/bd96e62b-9c2e-4328-b7d0-eaba643600eb" autoplay loop muted style="max-width: 100%;"></video>
 
