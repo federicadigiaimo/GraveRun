@@ -21,7 +21,6 @@ The project was designed to meet and exceed the following technical criteria:
 * **Particle Systems**: Development of real-time particle effects to enhance the environmental feedback and visual polish.
 
 While code organization was flexible for the assignment, this repository follows a **modular structure** to demonstrate industry-standard practices in game engine architecture.
-*Developed as part of the Fundamentals of Computer Graphics course in Computer Engineering in Alma Mater Studiorum, Bologna, Italy.*
 
 ## Gameplay Mechanics
 
