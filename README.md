@@ -20,6 +20,7 @@ The project was designed to meet and exceed the following technical criteria:
 * **Core Gameplay Mechanics**: Integration of functional gameplay elements, including defined **win/loss conditions** for the player.
 * **Particle Systems**: Development of real-time particle effects to enhance the environmental feedback and visual polish.
 
+
 While code organization was flexible for the assignment, this repository follows a **modular structure** to demonstrate industry-standard practices in game engine architecture.
 
 ## Gameplay Mechanics
